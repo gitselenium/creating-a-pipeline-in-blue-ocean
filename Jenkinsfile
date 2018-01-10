@@ -12,7 +12,7 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage('Unit Test') {
+    stage('Test') {
       parallel {
         stage('Unit Test') {
           environment {
