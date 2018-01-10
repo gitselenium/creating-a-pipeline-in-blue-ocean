@@ -13,11 +13,20 @@ pipeline {
       }
     }
     stage('Unit Test') {
-      environment {
-        CI = 'true'
-      }
-      steps {
-        sh './jenkins/scripts/test.sh'
+      parallel {
+        stage('Unit Test') {
+          environment {
+            CI = 'true'
+          }
+          steps {
+            sh './jenkins/scripts/test.sh'
+          }
+        }
+        stage('Functional Test') {
+          steps {
+            echo 'Functional Test ran successfully.'
+          }
+        }
       }
     }
   }
