@@ -29,5 +29,10 @@ pipeline {
         }
       }
     }
+    stage('Package') {
+      steps {
+        archiveArtifacts(artifacts: '*.tgz', onlyIfSuccessful: true)
+      }
+    }
   }
 }
