@@ -1,4 +1,4 @@
- pipeline {
+pipeline {
     agent {
       docker {
         image 'node:6-alpine'
@@ -36,15 +36,12 @@
             when { anyOf { branch 'master'; branch 'develop' } }
             steps {
               echo "Run Smoke Tests against ${env.DEPLOY_ENV.toUpperCase()} env..."
-               script {
-                            echo 'Adding 30 seconds'
+               script { 
+                       echo 'Adding 30 seconds'
                             sleep 30
                       } 
             }
-            post {
-              always {
-                junit keepLongStdio: true, testResults: 'smoke-test-results.xml'
-              }
+            post { 
               success {
                 echo "Smoke Tests PASSED for version  "
               }
