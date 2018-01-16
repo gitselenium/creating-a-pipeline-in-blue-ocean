@@ -28,11 +28,6 @@ pipeline {
           }
         }
       }
-    }
-    stage('') {
-      steps {
-        archiveArtifacts(artifacts: '*.tgz', onlyIfSuccessful: true)
-      }
-    }
+    } 
   }
 }
