@@ -44,7 +44,9 @@ pipeline {
             echo 'Run Smoke Tests against env...'
           }
            steps {
+             script{
               sleep 30
+             }
             } 
           post {
             always {
