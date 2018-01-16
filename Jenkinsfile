@@ -1,4 +1,4 @@
- pipeline {
+pipeline {
     agent {
       docker {
         image 'node:6-alpine'
@@ -34,13 +34,9 @@
             }
           }
           stage ('Run Smoke Tests') {
-            when { anyOf { branch 'master'; branch 'develop' } }
+            when { anyOf { branch 'master'; branch 'develop' } }  
             steps {
-                script{
                 sleep 30
-                }
-              }
-            steps {
               echo "Run Smoke Tests against env..." 
             }
         }
