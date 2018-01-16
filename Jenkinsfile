@@ -42,10 +42,10 @@ pipeline {
             
           }
           steps {
-            steps() {
+             
               script {
                 sleep 30
-              }
+              
               
             }
             
