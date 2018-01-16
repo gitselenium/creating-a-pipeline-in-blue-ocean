@@ -32,9 +32,9 @@ pipeline {
         
       } 
       stage('Build2') {
-        steps {
-          sh 'npm install'
-        }
+       def time = params.SLEEP_TIME_IN_SECONDS
+    echo "Waiting ${SLEEP_TIME_IN_SECONDS} seconds for deployment to complete prior starting smoke testing"
+    sleep time.toInteger() // seconds
       }
   }
 }
