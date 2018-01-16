@@ -26,7 +26,7 @@ pipeline {
           steps {
             echo 'Functional Test ran successfully.'
           }
-          steps {
+          script {
           echo 'Adding 30 seconds'
           sleep 30
                }
