@@ -32,7 +32,13 @@ pipeline {
     stage('Build2') {
       steps {
         echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
-        sleep 300
+        sleep 30
+      }
+    }
+    stage('Build3') {
+      steps {
+        echo 'Adding 50 seconds'
+        sleep 30
       }
     }
   }
