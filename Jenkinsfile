@@ -36,8 +36,10 @@ pipeline {
           stage ('Run Smoke Tests') {
             when { anyOf { branch 'master'; branch 'develop' } }
             steps {
-              echo "Run Smoke Tests against env..."
-              sleep 30 
+                sleep 30
+              }
+            steps {
+              echo "Run Smoke Tests against env..." 
             }
         }
       }
