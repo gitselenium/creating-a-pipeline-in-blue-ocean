@@ -29,7 +29,7 @@ pipeline {
         }
       }
     }
-    stage('Package') {
+    stage('') {
       steps {
         archiveArtifacts(artifacts: '*.tgz', onlyIfSuccessful: true)
       }
