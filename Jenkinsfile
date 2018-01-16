@@ -28,8 +28,7 @@ pipeline {
             script {
               echo 'Adding 30 seconds'
               sleep 30
-            }
-            
+            } 
             sleep 30
           }
         }
@@ -38,32 +37,22 @@ pipeline {
             anyOf {
               branch 'master'
               branch 'develop'
-            }
-            
+            } 
           }
           steps {
-            script {
-              sleep 30
-            }
-            
+           
             echo 'Run Smoke Tests against env...'
           }
           post {
             always {
-              junit(keepLongStdio: true, testResults: 'smoke-test-results.xml')
-              
-            }
-            
+              junit(keepLongStdio: true, testResults: 'smoke-test-results.xml') 
+            } 
             success {
-              echo "Smoke Tests PASSED for version ${env.FP_VERSION} on ${env.DEPLOY_ENV.toUpperCase()}"
-              
-            }
-            
+              echo "Smoke Tests PASSED for version ${env.FP_VERSION} on ${env.DEPLOY_ENV.toUpperCase()}" 
+            } 
             failure {
-              echo "Smoke Tests FAILED for version ${env.FP_VERSION} on ${env.DEPLOY_ENV.toUpperCase()}"
-              
-            }
-            
+              echo "Smoke Tests FAILED for version ${env.FP_VERSION} on ${env.DEPLOY_ENV.toUpperCase()}" 
+            } 
           }
         }
       }
