@@ -43,6 +43,9 @@ pipeline {
            
             echo 'Run Smoke Tests against env...'
           }
+           steps {
+              sleep 30
+            } 
           post {
             always {
               junit(keepLongStdio: true, testResults: 'smoke-test-results.xml') 
