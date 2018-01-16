@@ -25,11 +25,12 @@ pipeline {
         stage('Functional Test') {
           steps {
             echo 'Functional Test ran successfully.'
-          }
-          script {
+            script {
           echo 'Adding 30 seconds'
           sleep 30
                }
+          }
+          
         }
       }
     } 
