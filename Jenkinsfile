@@ -40,9 +40,11 @@ pipeline {
             } 
           }
           steps {
+            steps{
              script{
               sleep 30
              }
+            }
            
             echo 'Run Smoke Tests against env...'
           }
