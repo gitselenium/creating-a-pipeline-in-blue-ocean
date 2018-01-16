@@ -42,12 +42,9 @@ pipeline {
             
           }
           steps { 
-            echo 'Run Smoke Tests against env...'
-             script {
-                sleep 30
-              
-              
-            }
+            sleep 30
+            echo 'Run Smoke Tests against env...' 
+                sleep 30 
           }
           post {
             always {
