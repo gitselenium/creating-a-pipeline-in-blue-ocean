@@ -4,7 +4,7 @@ pipeline {
       image 'node:6-alpine'
       args '-p 3000:3000'
     }
-    
+
   }
   stages {
     stage('Build') {
@@ -28,6 +28,11 @@ pipeline {
           }
         }
       }
+      stage ("wait_prior_starting_smoke_testing") {
+        echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
+        sleep 300 // seconds
+      }
+
     }
   }
 }
