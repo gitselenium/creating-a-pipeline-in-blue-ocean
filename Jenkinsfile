@@ -26,13 +26,13 @@ pipeline {
           steps {
             echo 'Functional Test ran successfully.'
             script {
-          echo 'Adding 30 seconds'
-          sleep 30
-               }
+              echo 'Adding 30 seconds'
+              sleep 30
+            }
+            
           }
-          
         }
       }
-    } 
+    }
   }
 }
