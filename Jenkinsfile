@@ -40,15 +40,7 @@ pipeline {
                        echo 'Adding 30 seconds'
                             sleep 30
                       } 
-            }
-            post { 
-              success {
-                echo "Smoke Tests PASSED for version  "
-              }
-              failure {
-                echo "Smoke Tests FAILED for version  "
-              }
-            }
+            } 
           }
         }
       } 
