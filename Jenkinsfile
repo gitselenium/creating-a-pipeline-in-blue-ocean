@@ -26,20 +26,12 @@ pipeline {
           steps {
             echo 'Functional Test ran successfully.'
           }
+          steps {
+        echo 'Adding 30 seconds'
+        sleep 30
+      }
         }
       }
-    }
-    stage('Build2') {
-      steps {
-        echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
-        sleep 30
-      }
-    }
-    stage('Build3') {
-      steps {
-        echo 'Adding 50 seconds'
-        sleep 30
-      }
-    }
+    } 
   }
 }
