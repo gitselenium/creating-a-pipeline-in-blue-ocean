@@ -14,7 +14,8 @@ pipeline {
       }
       stage('Test') {
         parallel {
-          stage('Unit Test') {
+          stage('Unit Test') 
+          {
             environment {
               CI = 'true'
             }
@@ -28,12 +29,13 @@ pipeline {
             }
           }
         }
-        stage('Build') {
-            steps {
-              sh 'npm install'
-            }
-          }
+        
       } 
+      stage('Build2') {
+        steps {
+          sh 'npm install'
+        }
+      }
   }
 }
   
